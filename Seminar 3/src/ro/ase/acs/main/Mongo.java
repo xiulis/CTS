@@ -6,13 +6,12 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import ro.ase.acs.database.Insertable;
-import ro.ase.acs.database.Readable;
+import ro.ase.acs.database.Table;
 
 import java.util.Map;
 
-public class Mongo implements Database, Insertable, Readable {
-    public MongoDatabase mongoDb;
+public class Mongo implements Database, Table {
+    private MongoDatabase mongoDb;
 
     @Override
     public void createDatabase() {

@@ -1,9 +1,7 @@
 package ro.ase.acs.main;
 
 import ro.ase.acs.database.Database;
-import ro.ase.acs.database.Insertable;
-import ro.ase.acs.database.Readable;
-
+import ro.ase.acs.database.Table;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,8 +10,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Map;
 
-public class SQL implements Database, Insertable, Readable {
-    Connection connection;
+public class SQL implements Database, Table {
+    private Connection connection;
 
     @Override
     public void createDatabase() {

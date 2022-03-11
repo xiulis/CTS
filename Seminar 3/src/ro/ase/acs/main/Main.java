@@ -1,6 +1,7 @@
 package ro.ase.acs.main;
 
 import ro.ase.acs.database.Database;
+import ro.ase.acs.database.Table;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,11 +15,11 @@ public class Main {
         data.put("salary", "4000");
 
         Database database = new SQL();
-        //Database database = new Mongo();
         database.createDatabase();
-        database.createTable(nameTable);
-        ((SQL) database).insertData(data, nameTable);
-        ((SQL) database).readData(nameTable);
+        Table table = (SQL)database;
+        table.createTable(nameTable);
+        table.insertData(data, nameTable);
+        table.readData(nameTable);
 
     }
 }

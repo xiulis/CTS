@@ -4,5 +4,4 @@ import java.util.Map;
 
 public interface Database {
     void createDatabase();
-    void createTable(String nameTable);
 }
