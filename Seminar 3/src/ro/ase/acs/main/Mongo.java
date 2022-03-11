@@ -1,15 +1,18 @@
 package ro.ase.acs.main;
 
 import ro.ase.acs.database.Database;
+import ro.ase.acs.database.Table;
 import org.bson.Document;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+
 import java.util.Map;
 
-public class Mongo implements Database {
-    public MongoDatabase mongoDb;
+public class Mongo implements Database, Table {
+    private MongoDatabase mongoDb;
+
     @Override
     public void createDatabase() {
         MongoClient mongoClient = new MongoClient("localhost", 27017);
